@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/pages/Home.module.css';
 
 export default function Home() {
   return (
@@ -17,6 +17,12 @@ export default function Home() {
         <p>
           A weather app focused on a simple and intuitive design
         </p>
+
+        <a href='/app'>
+          <button className={styles.button}>
+            Get Started
+          </button>
+        </a>
       </main>
 
       <footer className={styles.footer}>
