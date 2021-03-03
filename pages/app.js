@@ -8,7 +8,7 @@ import SearchBar from '../components/SearchBar';
 export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [locationQuery, setLocationQuery] = useState('');
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ city: {}, weather: {} });
 
   let handleChange = event => {
     let searchValue = event.target.value;
@@ -29,16 +29,21 @@ export default function App() {
         location: searchTerm
       }
     });
-    setWeatherData(data.data.weather);
+
+    setWeatherData(data.data);
   }
   
-  if (weatherData.name) {
+  if (weatherData.city.name) {
     return(
       <div>
         <SearchBar searchTerm={searchTerm} handleChange={handleChange} handleKeyUp={handleKeyUp} />
-        <h1>Showing weather for {weatherData.name}, {weatherData.sys.country}</h1>
-        <p>Location: {weatherData.name}</p>
-        <p>Current temperature: {Math.round(weatherData.main.temp)}° F</p>
+        {weatherData.city.state === '' ?
+          <h1>Showing weather for {weatherData.city.name}, {weatherData.city.country}</h1>
+          :
+          <h1>Showing weather for {weatherData.city.name}, {weatherData.city.state}, {weatherData.city.country}</h1>
+        }
+        <p>Location: {weatherData.city.name}</p>
+        <p>Current temperature: {Math.round(weatherData.weather.current.temp)}° F</p>
       </div>
     )
   } else {
