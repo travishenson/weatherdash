@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Head from 'next/head';
-import styles from '../styles/pages/App.module.css';
 
-import SearchBar from '../components/SearchBar';
+import { MainWeather, SearchBar, WeatherInfo } from '../components';
+import styles from '../styles/pages/App.module.css';
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -35,22 +35,22 @@ export default function App() {
   
   if (weatherData.city.name) {
     return(
-      <div>
+      <div className={styles.container}>
         <SearchBar searchTerm={searchTerm} handleChange={handleChange} handleKeyUp={handleKeyUp} />
-        {weatherData.city.state === '' ?
-          <h1>Showing weather for {weatherData.city.name}, {weatherData.city.country}</h1>
-          :
-          <h1>Showing weather for {weatherData.city.name}, {weatherData.city.state}, {weatherData.city.country}</h1>
-        }
-        <p>Location: {weatherData.city.name}</p>
-        <p>Current temperature: {Math.round(weatherData.weather.current.temp)}° F</p>
+        <div className={styles.innerContainer}>
+          <MainWeather weatherData={weatherData} />
+          <hr />
+          <WeatherInfo weatherData={weatherData} />
+        </div>
       </div>
     )
   } else {
     return (
-      <div>
+      <div className={styles.container}>
         <SearchBar searchTerm={searchTerm} handleChange={handleChange} handleKeyUp={handleKeyUp} />
-        <h1>Complete a search to see weather</h1>
+        <div className={styles.innerContainer}>
+          <h1>Complete a search to see weather</h1>
+        </div>
       </div>
     )
   }

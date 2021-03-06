@@ -1,0 +1,35 @@
+.topBar {
+  align-items: center;
+  background-color: #BB86FC;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.appName {
+  line-height: 0.5;
+}
+
+.searchBar {
+  background-color: #BB86FC;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.5);
+  height: 45px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.searchBar::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.searchBar:focus {
+  border-bottom: 1px solid#FFFFFF;
+  color: #FFFFFF;
+  outline: none;
+}

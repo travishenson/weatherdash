@@ -1,0 +1,83 @@
+.mainWeather {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+  justify-content: flex-start;
+  margin: 2em 0;
+}
+
+.cityInfo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.cityName {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.date {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.temperature {
+  align-items: flex-start;
+  color: rgba(255, 255, 255, 0.87);
+  display: flex;
+  margin: 35px 0;
+}
+
+.tempMeasure {
+  align-self: flex-start;
+  font-size: 120px;
+  line-height: 90%;
+}
+
+.tempUnit {
+  font-size: 48px;
+  font-weight: normal;
+}
+
+.feelsLike {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.hiLo {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  justify-content: center;
+  margin: 15px auto;
+  width: 100%;
+}
+
+.weatherIcon {
+  margin: 0;
+  padding: 0;
+  width: 72px;
+}
+
+.conditions {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 100%;
+  margin: 0;
+}
+
+.descriptor {
+  font-weight: normal;
+}
