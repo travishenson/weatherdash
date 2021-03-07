@@ -1,6 +1,9 @@
 .container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 850px;
   width: 100%;
 }
 

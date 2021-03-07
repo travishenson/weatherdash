@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Head from 'next/head';
 
-import { MainWeather, SearchBar, WeatherInfo } from '../components';
+import { Forecast, MainWeather, SearchBar, WeatherInfo } from '../components';
 import styles from '../styles/pages/App.module.css';
 
 export default function App() {
@@ -35,22 +35,22 @@ export default function App() {
   
   if (weatherData.city.name) {
     return(
-      <div className={styles.container}>
+      <div>
         <SearchBar searchTerm={searchTerm} handleChange={handleChange} handleKeyUp={handleKeyUp} />
-        <div className={styles.innerContainer}>
-          <MainWeather weatherData={weatherData} />
-          <hr />
-          <WeatherInfo weatherData={weatherData} />
+        <div className={styles.container}>
+          <div className={styles.innerContainer}>
+            <MainWeather weatherData={weatherData} />
+            <WeatherInfo weatherData={weatherData} />
+            <hr />
+            <Forecast weatherData={weatherData} />
+          </div>
         </div>
       </div>
     )
   } else {
     return (
-      <div className={styles.container}>
+      <div>
         <SearchBar searchTerm={searchTerm} handleChange={handleChange} handleKeyUp={handleKeyUp} />
-        <div className={styles.innerContainer}>
-          <h1>Complete a search to see weather</h1>
-        </div>
       </div>
     )
   }

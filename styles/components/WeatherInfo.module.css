@@ -9,8 +9,9 @@
 .miscInfo {
   display: flex;
   flex-direction: row;
-  font-size: 16px;
+  font-size: 14px;
   justify-content: space-evenly;
   margin: 15px auto;
+  text-transform: uppercase;
   width: 100%;
 }

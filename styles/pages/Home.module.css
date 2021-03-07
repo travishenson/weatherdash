@@ -13,25 +13,14 @@
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 0;
+  width: 90%;
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1.15;
   margin: 0;
   text-align: center;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
 }
 
 .button {
@@ -55,10 +44,6 @@
   height: 100px;
   justify-content: center;
   width: 100%;
-}
-
-.footer img {
-  margin-left: 0.5rem;
 }
 
 .footer a {

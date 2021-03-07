@@ -4,8 +4,7 @@ export default function MainWeather(props) {
   let parseDate = (dt) => {
     return (
       new Intl.DateTimeFormat(
-        'en-US', 
-        {
+        'en-US', {
           weekday: 'short', 
           day: 'numeric', 
           month: 'short', 
@@ -20,11 +19,6 @@ export default function MainWeather(props) {
   return (
     <div className={styles.mainWeather}>
       <div className={styles.cityInfo}>
-        <img 
-          src={`http://openweathermap.org/img/wn/${props.weatherData.weather.current.weather[0].icon}@2x.png`}
-          alt={`${props.weatherData.weather.current.weather[0].main} weather icon`}
-          className={styles.weatherIcon}
-        />
         {props.weatherData.city.state === '' ?
           <h2 className={styles.cityName}>{props.weatherData.city.name}, {props.weatherData.city.country}</h2>
           :
@@ -32,9 +26,12 @@ export default function MainWeather(props) {
         }
         <h3 className={styles.date}>{parseDate(props.weatherData.weather.current.dt)}</h3>
       </div>
-      <div className={styles.temperature}>
-        <div className={styles.tempMeasure}>{Math.round(props.weatherData.weather.current.temp)}</div>
-        <div className={styles.tempUnit}>°F</div>
+      <div className={styles.mainInfo}>
+        <div className={styles.temperature}>
+          <div className={styles.tempMeasure}>{Math.round(props.weatherData.weather.current.temp)}</div>
+          <div className={styles.tempUnit}>°F</div>
+        </div>
+        <div className={styles.condition}>{props.weatherData.weather.current.weather[0].main}</div>
       </div>
       <h3 className={styles.feelsLike}>Feels like {Math.round(props.weatherData.weather.current.feels_like)}°</h3>
       <div className={styles.hiLo}>

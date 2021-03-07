@@ -1,0 +1,13 @@
+.panel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  justify-content: center;
+  min-width: 60px;
+  text-align: center;
+}
+
+.icon {
+  width: 50px;
+}
