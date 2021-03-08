@@ -29,7 +29,7 @@ export default function MainWeather(props) {
       <div className={styles.mainInfo}>
         <div className={styles.temperature}>
           <div className={styles.tempMeasure}>{Math.round(props.weatherData.weather.current.temp)}</div>
-          <div className={styles.tempUnit}>°F</div>
+          <div className={styles.tempUnit}>°</div>
         </div>
         <div className={styles.condition}>{props.weatherData.weather.current.weather[0].main}</div>
       </div>

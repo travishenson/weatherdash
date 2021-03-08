@@ -18,7 +18,7 @@ export default function WeatherInfo(props) {
         </div>
         <div className={styles.wind}>
           <div className={styles.windValue}>
-            {props.weatherData.weather.current.wind_speed} MPH
+            {props.weatherData.weather.current.wind_speed} {props.units === 'imperial' ? 'mph' : 'kph'}
           </div>
           <div className={styles.windLabel}>Wind</div>
         </div>

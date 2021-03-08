@@ -12,6 +12,7 @@
   justify-content: center;
   margin: 0 auto;
   max-width: 750px;
+  text-align: center;
 }
 
 .appName {
@@ -38,4 +39,16 @@
   border-bottom: 1px solid#FFFFFF;
   color: #FFFFFF;
   outline: none;
+}
+
+.unitsLabel {
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.activeUnit {
+  color: rgba(255, 255, 255, 1.0);
+  font-size: 16px;
+  font-weight: bold;
 }

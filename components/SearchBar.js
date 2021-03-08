@@ -18,6 +18,23 @@ export default function SearchBar (props) {
           onChange={props.handleChange}
           onKeyUp={props.handleKeyUp}
         />
+        <div className={styles.unitsLabel}>
+          <p>
+            {props.units === 'imperial' ? 
+              <span>
+                <span onClick={props.setImperial} className={styles.activeUnit}>°F</span>
+                &nbsp; | &nbsp;
+                <span onClick={props.setMetric}>°C</span>
+              </span>
+              :
+              <span>
+                <span onClick={props.setImperial}>°F</span>
+                &nbsp; | &nbsp;
+                <span onClick={props.setMetric} className={styles.activeUnit}>°C</span>
+              </span>
+            }
+          </p>
+        </div>
       </div>
     </div>
   );

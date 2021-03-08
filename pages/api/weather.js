@@ -9,7 +9,7 @@ export default async (req, res) => {
 
   await axios({
     method: 'post',
-    url: `http://api.openweathermap.org/data/2.5/weather?q=${req.query.location}&units=imperial&appid=${process.env.OPENWEATHER_KEY}`
+    url: `http://api.openweathermap.org/data/2.5/weather?q=${req.query.location}&units=${req.query.units}&appid=${process.env.OPENWEATHER_KEY}`
   })
   .then(response => {
     lat = response.data.coord.lat;
@@ -35,7 +35,7 @@ export default async (req, res) => {
 
   await axios({
     method: 'post',
-    url: `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${process.env.OPENWEATHER_KEY}`
+    url: `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${req.query.units}&appid=${process.env.OPENWEATHER_KEY}`
   })
   .then(response => {
     weatherData = response.data
