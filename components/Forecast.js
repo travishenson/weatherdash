@@ -17,7 +17,7 @@ export default function Forecast(props) {
       <div className={styles.section}>
         <h3 className={styles.sectionHeader}>This Week's 7-Day Forecast</h3>
         <DailyForecast 
-          forecast={props.weatherData.weather.daily} 
+          forecast={props.weatherData.weather.daily.slice(1)} 
           timezone={props.weatherData.weather.timezone} 
           timezoneOffset={props.weatherData.weather.timezone_offset}
         />

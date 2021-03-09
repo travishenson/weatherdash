@@ -6,9 +6,11 @@ export default function SearchBar (props) {
   return (
     <div className={styles.topBar}>
       <div className={styles.inner}>
-        <a href='/' alt='WeatherDash home'>
-          <h3 className={styles.appName}>WeatherDash.</h3>
-        </a>
+        <div className={styles.logoBar}>
+          <a href='/' alt='WeatherDash home'>
+            <h3 className={styles.appName}>WeatherDash.</h3>
+          </a>
+        </div>
         <input 
           type='text'
           placeholder='Search for a location'

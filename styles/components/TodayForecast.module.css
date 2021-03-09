@@ -1,5 +1,23 @@
+.expandToggle {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
 .today {
+  margin: 0 auto;
+}
+
+.todayInner {
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.expanded {
+  flex-wrap: wrap;
+}
+
+.collapsed {
+  flex-wrap: nowrap;
 }

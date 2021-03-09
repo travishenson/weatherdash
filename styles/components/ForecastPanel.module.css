@@ -1,11 +1,16 @@
 .panel {
   align-items: center;
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   font-size: 14px;
+  height: 115px;
   justify-content: center;
-  min-width: 60px;
+  min-width: 40px;
+  max-width: 100px;
+  position: relative;
   text-align: center;
+  width: 17%;
 }
 
 .icon {

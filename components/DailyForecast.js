@@ -26,6 +26,7 @@ export default function DailyForecast(props) {
             icon={day.weather[0].icon}
             time={parseDay(day.dt)}
             type={'daily'}
+            key={day.dt}
           />
         )
       })}

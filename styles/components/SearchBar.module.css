@@ -15,6 +15,10 @@
   text-align: center;
 }
 
+.logoBar {
+  background-color: #000000;
+}
+
 .appName {
   line-height: 0.5;
   text-align: center;
