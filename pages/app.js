@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Head from 'next/head';
 
-import { Forecast, MainWeather, SearchBar, WeatherInfo } from '../components';
+import { Forecast, Loading, MainWeather, SearchBar, WeatherInfo } from '../components';
 import styles from '../styles/pages/App.module.css';
 
 export default function App() {
@@ -10,6 +10,7 @@ export default function App() {
   const [locationQuery, setLocationQuery] = useState('');
   const [weatherData, setWeatherData] = useState({ city: {}, weather: {} });
   const [units, setUnits] = useState('imperial');
+  const [loading, setLoading] = useState(false);
 
   let handleChange = event => {
     let searchValue = event.target.value;
@@ -25,6 +26,8 @@ export default function App() {
   }
 
   let fetchData = async () => {
+    setLoading(true);
+    
     const data = await axios.get('/api/weather', {
       params: {
         location: searchTerm,
@@ -33,6 +36,7 @@ export default function App() {
     });
 
     setWeatherData(data.data);
+    setLoading(false);
   }
 
   let setImperial = async () => {
@@ -55,7 +59,21 @@ export default function App() {
     if (searchTerm !== '') { fetchData() };
   }, [units])
   
-  if (weatherData.city.name) {
+  if (loading === true) {
+    return (
+      <div>
+        <SearchBar 
+          searchTerm={searchTerm} 
+          units={units}
+          handleChange={handleChange} 
+          handleKeyUp={handleKeyUp} 
+          setImperial={setImperial}
+          setMetric={setMetric}
+        />
+        <Loading />
+      </div>
+    )
+  } else if (weatherData.city.name) {
     return(
       <div>
         <SearchBar 
