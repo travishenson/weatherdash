@@ -1,6 +1,22 @@
 .expandToggle {
-  font-size: 14px;
+  background-color: #121212;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: lightgrey;
+  cursor: pointer;
+  font-size: 12px;
+  height: 25px;
+  margin: 0.3em 0.3em 0.3em 0;
+  padding: 0.35em 1.25em;
   text-transform: uppercase;
+  transition: all 0.2s;
+  width: 90px;
+}
+
+.expandToggle:hover {
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
 }
 
 .today {
