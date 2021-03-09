@@ -27,7 +27,7 @@ export default function App() {
 
   let fetchData = async () => {
     setLoading(true);
-    
+
     const data = await axios.get('/api/weather', {
       params: {
         location: searchTerm,
@@ -40,24 +40,22 @@ export default function App() {
   }
 
   let setImperial = async () => {
-    if (searchTerm === '') {
-      setUnits('imperial');
-    } else {
-      setUnits('imperial');
-    };
+    setUnits('imperial');
+    window.localStorage.setItem('units', 'imperial');
   }
 
   let setMetric = () => {
-    if (searchTerm === '') {
-      setUnits('metric');
-    } else {
-      setUnits('metric');
-    };
+    setUnits('metric');
+    window.localStorage.setItem('units', 'metric');
   }
 
   useEffect(() => {
     if (searchTerm !== '') { fetchData() };
   }, [units])
+
+  useEffect(() => {
+    setUnits(window.localStorage.getItem('units'))
+  }, [])
   
   if (loading === true) {
     return (

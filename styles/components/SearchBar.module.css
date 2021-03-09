@@ -47,6 +47,10 @@
   letter-spacing: 2px;
 }
 
+.changeUnit:hover {
+  cursor: pointer;
+}
+
 .activeUnit {
   color: rgba(255, 255, 255, 1.0);
   font-size: 16px;

@@ -11,7 +11,7 @@ export default function MainWeather(props) {
           timeZone: props.weatherData.weather.timezone
         })
         .format(
-          new Date((dt + props.weatherData.weather.timezone_offset) * 1000)
+          new Date((dt * 1000) + props.weatherData.weather.timezone_offset)
         )
     )
   }

@@ -22,15 +22,15 @@ export default function SearchBar (props) {
           <p>
             {props.units === 'imperial' ? 
               <span>
-                <span onClick={props.setImperial} className={styles.activeUnit}>°F</span>
+                <span onClick={props.setImperial} className={`${styles.activeUnit} ${styles.changeUnit}`}>°F</span>
                 &nbsp; | &nbsp;
-                <span onClick={props.setMetric}>°C</span>
+                <span onClick={props.setMetric} className={styles.changeUnit}>°C</span>
               </span>
               :
               <span>
-                <span onClick={props.setImperial}>°F</span>
+                <span onClick={props.setImperial} className={styles.changeUnit}>°F</span>
                 &nbsp; | &nbsp;
-                <span onClick={props.setMetric} className={styles.activeUnit}>°C</span>
+                <span onClick={props.setMetric} className={`${styles.activeUnit} ${styles.changeUnit}`}>°C</span>
               </span>
             }
           </p>
